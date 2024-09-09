@@ -26,7 +26,41 @@
             );
         };
 
+        const App = () => {
+            const movies = [
+                {
+                    title: 'Inception',
+                    year: 2010,
+                    poster: 'https://cnhspawprint.com/wp-content/uploads/2022/11/MV5BZGFjOTRiYjgtYjEzMS00ZjQ2LTkzY2YtOGQ0NDI2NTVjOGFmXkEyXkFqcGdeQXVyNDQ5MDYzMTk@._V1_-607x900.jpg'
+                },
+                {
+                    title: 'Pulp Fiction',
+                    year: 1994,
+                    poster: 'https://musicart.xboxlive.com/7/767c6300-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080'
+                },
+                {
+                    title: 'The Gentlemen',
+                    year: 2019,
+                    poster: 'https://m.media-amazon.com/images/M/MV5BZDFmNmM3ODUtZTE3Mi00NWJhLTlkODUtNTU4M2M3NzgyYWM4XkEyXkFqcGc@._V1_.jpg'
+                }
+            ];
 
+            return (
+                <div className="movie-container">
+                    {movies.map((movie, index) => (
+                        <MovieCard
+                            key={index}
+                            title={movie.title}
+                            year={movie.year}
+                            poster={movie.poster}
+                        />
+                    ))}
+                </div>
+            );
+        };
+
+        const root = document.getElementById('app');
+        ReactDOM.createRoot(root).render(<App />);
 
 
 
